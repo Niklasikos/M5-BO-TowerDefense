@@ -457,38 +457,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 602640935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &766089681 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7115270614706695891, guid: d167ef02ba5ce5149b83fe62d3347cf2, type: 3}
-  m_PrefabInstance: {fileID: 1112796836}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &766089686
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766089681}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &800077750
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,10 +666,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2712246031150534742, guid: 761a53cc8e2022749b092dc21458f65a, type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5223518658142220302, guid: 761a53cc8e2022749b092dc21458f65a, type: 3}
       propertyPath: m_Name
       value: TowerTest 1
@@ -834,10 +798,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7115270614706695891, guid: d167ef02ba5ce5149b83fe62d3347cf2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 766089686}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d167ef02ba5ce5149b83fe62d3347cf2, type: 3}
 --- !u!1 &1483396970
 GameObject:

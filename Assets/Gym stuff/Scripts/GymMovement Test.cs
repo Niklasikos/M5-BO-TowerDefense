@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GymMovementTest : MonoBehaviour
@@ -21,6 +22,18 @@ public class GymMovementTest : MonoBehaviour
                 currentTarget++;
             }
         }
-        
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("damage")) // get component to get the damage?
+        {
+            health -= 20f;
+            Destroy(other.gameObject);
+        }
     }
 }
