@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2281388251330697871}
-  - component: {fileID: -4594310900723148413}
   - component: {fileID: 5621058421702837321}
   - component: {fileID: 1163862699586827169}
+  - component: {fileID: -7219392375001829100}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: damage
@@ -34,21 +34,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4594310900723148413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4261079868830055072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a3f19a09387434e8de7e32382e189b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GymArrow
-  target: {fileID: 0}
-  damage: 20
-  speed: 2
 --- !u!212 &5621058421702837321
 SpriteRenderer:
   serializedVersion: 2
@@ -154,3 +139,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.05, y: 0.35}
   m_EdgeRadius: 0
+--- !u!114 &-7219392375001829100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4261079868830055072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a36f654a104c0408ccb6976b922347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arrow
+  target: {fileID: 0}
+  damage: 20
+  speed: 2

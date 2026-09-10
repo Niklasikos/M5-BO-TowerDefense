@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6647634294033322607}
   - component: {fileID: 7061892664226444243}
-  - component: {fileID: 4076428505263801271}
   - component: {fileID: -6874437595889631554}
   - component: {fileID: 5832397302074585977}
+  - component: {fileID: 3713923239735393089}
   m_Layer: 0
   m_Name: goblinTest 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,28 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4076428505263801271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115270614706695891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05912b6dba9050141b9d06f1d8914708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GymMovementTest
-  positions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  speed: 1
-  health: 100
 --- !u!58 &-6874437595889631554
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -179,3 +157,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3713923239735393089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115270614706695891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51753af7e5188649b7502a56849d384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  health: 100
+  speed: 1
+  isAlive: 1

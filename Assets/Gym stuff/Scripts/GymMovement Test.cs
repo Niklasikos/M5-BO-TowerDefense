@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class GymMovementTest : MonoBehaviour
+public class GymMovementTest : MonoBehaviour // protected enemy class?
 {
     [SerializeField] private Transform[] positions;
     [SerializeField] private float speed = 5f;
@@ -14,6 +13,7 @@ public class GymMovementTest : MonoBehaviour
 
     void Update()
     {
+        // if positions == 0 return
         transform.position = Vector2.MoveTowards(transform.position, positions[currentTarget].position, speed * Time.deltaTime);
         if(Vector2.Distance(transform.position, positions[currentTarget].position) < 0.1f)
         {
