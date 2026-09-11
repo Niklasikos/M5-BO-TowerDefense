@@ -16,16 +16,16 @@ public class GymTower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        elapsed += Time.deltaTime;        
+        elapsed += Time.deltaTime;
         if (targets.Count == 0)
             return;
-            
-        foreach (GameObject target in targets)
+        targets.RemoveAll(target =>
         {
             Enemy enemy = target.GetComponent<Enemy>();
-            if(enemy.isAlive == false)
-            targets.Remove(target);
-        }
+            return enemy == null || !enemy.isAlive;
+        });
+        if (targets.Count == 0)
+            return;
         if (elapsed > shootingTimer)
         {
             GameObject arrow = Instantiate(gymArrow, transform.position, quaternion.identity);
@@ -42,6 +42,6 @@ public class GymTower : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        targets.Remove(collision.gameObject);        
+        targets.Remove(collision.gameObject);
     }
 }
