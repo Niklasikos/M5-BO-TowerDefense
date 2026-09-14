@@ -51,7 +51,7 @@ Canon, small 50/5sec, damage tower
 
 Eventuele extra torens: 
 
-komt er later erbij ideen krijgen wij altijd tijdens het developen
+Mage, big, 5/2s + Slow eefect, effect tower
 
 # 5. Vijanden 
 
@@ -65,7 +65,7 @@ big giant ork, slow, 200 health, tank unit
 
 Eventuele extra vijanden: 
 
-komt ook later erbij
+Mad Mage, medium, 75 health, can stun towers
 
 # 6. Gameplay loop 
 
