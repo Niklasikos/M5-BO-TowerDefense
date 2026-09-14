@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 public class ClickScript : MonoBehaviour
 {
     [SerializeField] private Camera cam;
-    private ClickTest clickTestSelected;
+    private IInteractible interactibleChosen;
 
     void Update()
     {
@@ -15,20 +15,26 @@ public class ClickScript : MonoBehaviour
         Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
 
         if (hit == null)
-            return;
-
-
-        ClickTest clickTest = hit.GetComponent<ClickTest>();
-
-        if(clickTest == null)
-            return;
-
-        if(clickTestSelected != null && clickTestSelected != clickTest)
         {
-            clickTestSelected.OnDeselected();
+            if(interactibleChosen != null)
+            {
+                interactibleChosen.OnDeselected();            
+            }
+            return;
         }
 
-        clickTestSelected = clickTest;
-        clickTestSelected.OnClicked();
+
+        IInteractible interactible = hit.GetComponent<IInteractible>();
+
+        if(interactible == null)
+            return;
+
+        if(interactibleChosen != null && interactibleChosen != interactible)
+        {
+            interactibleChosen.OnDeselected();
+        }
+
+        interactibleChosen = interactible;
+        interactibleChosen.OnClicked();
     }
 }

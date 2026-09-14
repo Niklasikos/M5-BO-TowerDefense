@@ -13,13 +13,13 @@ Titel: Tour de défense
 
 Elevator pitch, maximaal twee zinnen: Beschrijf kort wat jouw game is en waarom het leuk is om te spelen. 
 
-Het is een normale Tower Defense maar je bent een franse generaal die de bad guys verslaan moet, je bouwt towers, defense en overleeft de battles
+Het is een normale Tower Defense maar je bent een franse generaal die de Vijanden(Orks, Skeletons, mad mages and tanks) verslaan moet, je bouwt towers, defense en overleeft de battles.
 
 # 2. Wat maakt jouw tower defense uniek 
 
 Beschrijf in één of twee zinnen wat jouw game onderscheidt van een standaard tower defense. Denk aan iets dat de speler op een nieuwe manier laat nadenken of spelen. 
 
-de unieke playstyle dat je frans bent
+Er is niet erg een unieke playstyle misschien een iets grotere map en dan een RTS camera movement 
 
 # 3. Schets van je level en UI 
 
@@ -106,7 +106,7 @@ Oplossing: verspreid jouw towers
 
 Schrijf per sprint welke mechanics jij oplevert in de build. Denk aan voorbeelden zoals vijandbeweging over een pad, torens plaatsen, doel kiezen en schieten, waves starten, UI voor geld en levens, upgrades, jouw unieke feature. 
 
-Sprint 1 mechanics: 
+Sprint 1 mechanics: Vijanden, Towers, Spawner, Health, Coins
 
 Sprint 2 mechanics: 
 

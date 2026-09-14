@@ -171,4 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 100
   speed: 1
+  minCoins: 2
+  maxCoins: 5
+  <DamageToPlayer>k__BackingField: 20
   isAlive: 1

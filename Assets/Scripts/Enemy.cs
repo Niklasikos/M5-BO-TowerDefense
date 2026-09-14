@@ -1,10 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IEnemy
 {
     [SerializeField] private int health;
     [SerializeField] private float speed;
+    [SerializeField] private int minCoins;
+    [SerializeField] private int maxCoins;
+    [field: SerializeField] public int DamageToPlayer {get; set;}
     protected Transform[] positions;
     private SpriteRenderer sR;
     private int currentTarget;
@@ -55,6 +58,8 @@ public class Enemy : MonoBehaviour
     private IEnumerator Death()
     {
         isAlive = false;
+        int Coins = Random.Range(minCoins, maxCoins);
+        LevelManager.Instance.AddCoins(Coins);
         sR.color = Color.red;
         yield return new WaitForSeconds(0.2f);
         sR.color = Color.white;

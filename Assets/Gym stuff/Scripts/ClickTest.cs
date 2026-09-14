@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ClickTest : MonoBehaviour
+public class ClickTest : MonoBehaviour, IInteractible
 {
     [SerializeField] private GameObject triangle;
 
