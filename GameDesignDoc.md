@@ -11,65 +11,34 @@ Datum: 7-9-2026
 Titel: Tour de défense 
 >(Tower defense maar je bent french)
 
-Elevator pitch, maximaal twee zinnen: Beschrijf kort wat jouw game is en waarom het leuk is om te spelen. 
-
 Het is een normale Tower Defense maar je bent een franse generaal die de Vijanden(Orks, Skeletons, mad mages and tanks) verslaan moet, je bouwt towers, defense en overleeft de battles.
 
 # 2. Wat maakt jouw tower defense uniek 
-
-Beschrijf in één of twee zinnen wat jouw game onderscheidt van een standaard tower defense. Denk aan iets dat de speler op een nieuwe manier laat nadenken of spelen. 
 
 Er is niet erg een unieke playstyle misschien een iets grotere map en dan een RTS camera movement 
 
 # 3. Schets van je level en UI 
 
-Maak een schets op papier of digitaal en voeg deze afbeelding toe aan je repository. Voeg in deze sectie de afbeelding in. 
-
-Je schets bevat minimaal: 
-
-Het pad waar de vijanden over lopen met beginpunt en eindpunt. 
-
-De plaatsen waar torens gebouwd kunnen worden. 
-
-De locatie van de basis of goal die verdedigd moet worden. 
-
-De UI onderdelen geld, wave teller, levens, startknop en pauzeknop. 
-
-Een legenda met symbolen of kleuren voor torens, vijanden, pad, basis en UI.
-
 ![image1](/readmevfx/tutoriallevelsktech.png)
 
 # 4. Torens 
 
-Toren 1 naam, bereik, schade, unieke eigenschap. 
-
 Archers, medium, 10/2sec, basic tower
 
-Toren 2 naam, bereik, schade, unieke eigenschap. 
-
 Canon, small 50/5sec, damage tower
-
-Eventuele extra torens: 
 
 Mage, big, 5/2s + Slow eefect, effect tower
 
 # 5. Vijanden 
 
-Vijand 1 naam, snelheid, levens, speciale eigenschap. 
-
 tiny orkling, medium speed, 50 health, basic enemy unit
 
-Vijand 2 naam, snelheid, levens, speciale eigenschap.
-
 big giant ork, slow, 200 health, tank unit
-
-Eventuele extra vijanden: 
 
 Mad Mage, medium, 75 health, can stun towers
 
 # 6. Gameplay loop 
 
-Beschrijf in drie tot vijf stappen wat de speler steeds doet.
 1. towers plaatsen
 2. vijanden verslaan
 3. towers upgraden
@@ -104,9 +73,7 @@ Oplossing: verspreid jouw towers
 
 # 9. Planning per sprint en mechanics 
 
-Schrijf per sprint welke mechanics jij oplevert in de build. Denk aan voorbeelden zoals vijandbeweging over een pad, torens plaatsen, doel kiezen en schieten, waves starten, UI voor geld en levens, upgrades, jouw unieke feature. 
-
-Sprint 1 mechanics: Vijanden, Towers, Spawner, Health, Coins
+Sprint 1 mechanics: Vijand01, Tower01, Spawner, Health, Coins
 
 Sprint 2 mechanics: 
 
@@ -117,8 +84,6 @@ Sprint 4 mechanics:
 Sprint 5 mechanics: 
 
 # 10. Inspiratie 
-
-Noem een bestaande tower defense game die jou inspireert en wat je daarvan meeneemt of juist vermijdt. 
 
 > Kingdom Rush
 

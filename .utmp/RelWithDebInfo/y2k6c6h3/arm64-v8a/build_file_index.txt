@@ -1,0 +1,2 @@
+C:\Users\Niklas\Desktop\School Werk\Year2\M5\M5-BO-TowerDefense\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\Niklas\Desktop\School Werk\Year2\M5\M5-BO-TowerDefense\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

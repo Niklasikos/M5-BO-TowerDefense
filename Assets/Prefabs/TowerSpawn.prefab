@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7148254627916756051}
   - component: {fileID: 8688664774361841736}
   - component: {fileID: 1628386567923050968}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TowerSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2063359844086057928}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: -0.24753, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9183152226145321776}
@@ -82,14 +82,14 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -6
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8847bf50bfa7c2244a4e5bddcd63becc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.024, y: 1.024}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -151,6 +151,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2457838323770555485}
     m_Modifications:
+    - target: {fileID: 956877388098818278, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
+      propertyPath: m_text
+      value: 50$
+      objectReference: {fileID: 0}
+    - target: {fileID: 956877388098818278, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
+      propertyPath: m_margin.z
+      value: -0.45292175
+      objectReference: {fileID: 0}
     - target: {fileID: 2299349746942429356, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
       propertyPath: TowerPos
       value: 
@@ -161,7 +169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2764362144913081228, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 2764362144913081228, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
       propertyPath: m_LocalPosition.z
@@ -195,12 +203,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4736002982484441772, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
+      propertyPath: m_text
+      value: 50$
+      objectReference: {fileID: 0}
     - target: {fileID: 5301220493083487961, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
       propertyPath: m_Name
       value: buildpopup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5150048054797495906, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
+    - {fileID: 3773661028043381881, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
+    - {fileID: 7614694668851345488, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
+    - {fileID: 645985585838140267, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55991a9a352c4d41b5be56cf43bd214, type: 3}

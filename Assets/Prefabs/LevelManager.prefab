@@ -44,4 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ccd60cbc1120cd418c6cf6966fd6c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  coinsCount: {fileID: 0}
+  healthCount: {fileID: 0}
+  PausePanel: {fileID: 0}
   Coins: 0
+  health: 0
+  isAlive: 1
+  EscapeAction: {fileID: -4194396575254215068, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  inputActions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

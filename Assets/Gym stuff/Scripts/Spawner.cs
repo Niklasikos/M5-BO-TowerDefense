@@ -16,7 +16,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         
     }
 
-    private IEnumerator SpawnEnemy() // gonna give the enemys the path on spawn with getcomponent
+    private IEnumerator SpawnEnemy()
     {
         for (int i = 0; i < 10; i++)
         {

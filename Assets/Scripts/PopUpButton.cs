@@ -22,6 +22,6 @@ public class PopUpButton : MonoBehaviour, IInteractible
 
     public void OnDeselected()
     {
-        // ig
+        // niks
     }
 }

@@ -45,3 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickScript
   cam: {fileID: 0}
+  interactibleLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  pointAction: {fileID: -4293600438981727172, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  interactAction: {fileID: -5291992431648570193, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

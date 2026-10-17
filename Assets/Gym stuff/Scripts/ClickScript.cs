@@ -3,22 +3,40 @@ using UnityEngine.InputSystem;
 public class ClickScript : MonoBehaviour
 {
     [SerializeField] private Camera cam;
+    [SerializeField] private LayerMask interactibleLayer;
+    [SerializeField] private InputActionReference pointAction;
+    [SerializeField] private InputActionReference interactAction;
+
+
     private IInteractible interactibleChosen;
+    private void OnEnable()
+    {
+        interactAction.action.Enable();
+        pointAction.action.Enable();
+    }
+
+    private void OnDisable()
+    {
+        interactAction.action.Disable();
+        pointAction.action.Disable();
+    }
 
     void Update()
     {
-        if (!Mouse.current.leftButton.wasPressedThisFrame)
+        if (!interactAction.action.WasPressedThisFrame())
             return;
 
-        Vector2 mouseWorldPos = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 screenPosition = pointAction.action.ReadValue<Vector2>();
 
-        Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
+        Vector2 worldPosition = cam.ScreenToWorldPoint(screenPosition);
+
+        Collider2D hit = Physics2D.OverlapPoint(worldPosition, interactibleLayer);
 
         if (hit == null)
         {
-            if(interactibleChosen != null)
+            if (interactibleChosen != null)
             {
-                interactibleChosen.OnDeselected();            
+                interactibleChosen.OnDeselected();
             }
             return;
         }
@@ -26,10 +44,10 @@ public class ClickScript : MonoBehaviour
 
         IInteractible interactible = hit.GetComponent<IInteractible>();
 
-        if(interactible == null)
+        if (interactible == null)
             return;
 
-        if(interactibleChosen != null && interactibleChosen != interactible)
+        if (interactibleChosen != null && interactibleChosen != interactible)
         {
             interactibleChosen.OnDeselected();
         }
