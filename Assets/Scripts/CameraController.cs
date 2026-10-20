@@ -8,6 +8,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] private InputActionReference dragAction;
     [SerializeField] private InputActionReference pointerDeltaAction;
     [SerializeField] private InputActionReference ControlAction;
+    [SerializeField] private InputActionReference pinchFinger1;
+    [SerializeField] private InputActionReference pinchFinger2;
+
     [SerializeField] private CinemachineCamera cinemachineCamera;
     [SerializeField] private Collider2D camBounds;
 
@@ -16,6 +19,10 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float zoomSpeed = 0.01f;
     [SerializeField] private float zoomMin = 3f;
     [SerializeField] private float zoomMax = 15f;
+    [SerializeField] private float pinchZoomSpeed = 0.01f;
+
+    private float previousPinchDistance;
+    private bool wasPinching;
 
     private void OnEnable()
     {
@@ -38,10 +45,11 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         MovementHandler();
-        ZoomHandler();
 
-        DragHandlerMouse();
-        DragHandlerTouch();
+        ZoomHandler();
+        PinchZoomHandler();
+
+        DragHandler();
 
         ClampPosition();
     }
@@ -84,30 +92,16 @@ public class CameraController : MonoBehaviour
         cinemachineCamera.Lens.OrthographicSize = Mathf.Clamp(zoom, zoomMin, zoomMax);
     }
 
-    private void DragHandlerMouse()
-    {
-        if (Mouse.current == null)
-            return;
-
-        if (!dragAction.action.IsPressed())
-            return;
-
-        Vector2 delta = pointerDeltaAction.action.ReadValue<Vector2>();
-        float worldUnits = cinemachineCamera.Lens.OrthographicSize * 2f / Screen.height;
-        Vector3 movement = new Vector3(-delta.x, -delta.y, 0);
-        transform.position += movement * worldUnits;
-    }
-
-    private void DragHandlerTouch()
+    private void DragHandler()
     {
         if (!dragAction.action.IsPressed())
             return;
 
         Vector2 delta = pointerDeltaAction.action.ReadValue<Vector2>();
-        float worldUnits = cinemachineCamera.Lens.OrthographicSize * 2f / Screen.height;
-        Vector3 movement = new Vector3(-delta.x, -delta.y, 0);
 
-        transform.position += movement * worldUnits;
+        float worldUnits = cinemachineCamera.Lens.OrthographicSize * 2f / Screen.height;
+
+        transform.position += new Vector3(-delta.x, -delta.y, 0f) * worldUnits;
     }
 
     private void ClampPosition() // dit deel is door ai geschreven omdat mijn oude script niet werkte
@@ -134,5 +128,33 @@ public class CameraController : MonoBehaviour
             : bounds.center.y;
 
         transform.position = position;
+    }
+
+    private void PinchZoomHandler()
+    {
+        if (Touchscreen.current == null || !Touchscreen.current.touches[0].press.isPressed ||
+            !Touchscreen.current.touches[1].press.isPressed)
+        {
+            wasPinching = false;
+            return;
+        }
+
+        Vector2 pos0 = pinchFinger1.action.ReadValue<Vector2>();
+        Vector2 pos1 = pinchFinger2.action.ReadValue<Vector2>();
+
+        float distance = Vector2.Distance(pos0, pos1);
+
+        if (wasPinching)
+        {
+            float difference = distance - previousPinchDistance;
+            float zoom = cinemachineCamera.Lens.OrthographicSize;
+
+            zoom -= difference * pinchZoomSpeed;
+
+            cinemachineCamera.Lens.OrthographicSize = Mathf.Clamp(zoom, zoomMin, zoomMax);
+        }
+
+        previousPinchDistance = distance;
+        wasPinching = true;
     }
 }

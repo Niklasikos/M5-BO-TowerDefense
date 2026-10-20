@@ -1,11 +1,22 @@
+
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
+    [SerializeField] private GameObject WinUI;
+    [SerializeField] private GameObject DeathUI;
+    [SerializeField] private Image Heart;
+    [SerializeField] private Sprite Heart100;
+    [SerializeField] private Sprite Heart80;
+    [SerializeField] private Sprite Heart60;
+    [SerializeField] private Sprite Heart40;
+    [SerializeField] private Sprite Heart20;
+    [SerializeField] private Sprite Heart00;
     [SerializeField] private TextMeshProUGUI coinsCount;
     [SerializeField] private TextMeshProUGUI healthCount;
     [SerializeField] private GameObject PausePanel;
@@ -18,11 +29,25 @@ public class LevelManager : MonoBehaviour
     [SerializeField] InputActionReference EscapeAction;
     [SerializeField] InputActionAsset inputActions;
     private InputActionMap inputMap;
+
+    void OnEnable()
+    {
+        inputActions.Enable();
+        EscapeAction.action.Enable();
+    }
+
+    void OnDisable()
+    {
+        inputActions.Disable();
+        EscapeAction.action.Disable();
+    }
     void Awake()
     {
         Time.timeScale = 1f;
         Instance = this;
         PausePanel.SetActive(false);
+        WinUI.SetActive(false);
+        DeathUI.SetActive(false);
         inputMap = inputActions.FindActionMap("Player");
         Coins += 50;
         UpdateCoinsDisplay();
@@ -31,12 +56,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if(health <= 0 && isAlive)
-        {
-            isAlive = false;
-            Death();
-        }
-        if(EscapeAction.action.WasPressedThisFrame())
+        if (EscapeAction.action.WasPressedThisFrame())
         {
             Pause();
         }
@@ -67,8 +87,23 @@ public class LevelManager : MonoBehaviour
 
     public void GetDamage(int damage)
     {
+        if (!isAlive)
+            return;
+
         health -= damage;
         UpdateHealthDisplay();
+        UpdateHeart();
+
+        if (health <= 0)
+        {
+            isAlive = false;
+            Death();
+        }
+    }
+
+    public bool GetAlive()
+    {
+        return isAlive;
     }
 
     private void UpdateHealthDisplay()
@@ -77,25 +112,42 @@ public class LevelManager : MonoBehaviour
         healthCount.text = $"Health: {health}";
     }
 
+    private void UpdateHeart()
+    {
+        if (health <= 0)
+            Heart.sprite = Heart00;
+        else if (health <= 20)
+            Heart.sprite = Heart20;
+        else if (health <= 40)
+            Heart.sprite = Heart40;
+        else if (health <= 60)
+            Heart.sprite = Heart60;
+        else if (health <= 80)
+            Heart.sprite = Heart80;
+        else
+            Heart.sprite = Heart100;
+    }
+
     private void Death()
     {
         Time.timeScale = 0f;
+        DeathUI.SetActive(true);
         Debug.Log("Player Ded");
     }
 
     public void Pause()
     {
-        if(isPaused)
+        if (isPaused)
         {
-            isPaused=false;
+            isPaused = false;
             Time.timeScale = 1f;
             PausePanel.SetActive(false);
             PauseButton.SetActive(true);
             inputMap.Enable();
         }
-        else if(!isPaused)
+        else if (!isPaused)
         {
-            isPaused=true;
+            isPaused = true;
             Time.timeScale = 0f;
             PausePanel.SetActive(true);
             PauseButton.SetActive(false);
@@ -105,6 +157,24 @@ public class LevelManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("gym");
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("Level Select");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void WonLevel()
+    {
+        OnDisable();
+        Time.timeScale = 0f;
+        WinUI.SetActive(true);
     }
 }

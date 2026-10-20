@@ -1,21 +1,21 @@
 # ninja log v5
-38	5809	8122839909005776	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b1eaff7693a2dd08
+6	2613	8141943377459905	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b1eaff7693a2dd08
 170	1158	8122839862287682	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5a09faa1371b597b
-116	5546	8122839906449808	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a4f1f820ddc55b9a
-21	4791	8122839898519335	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	dfd7fabb3f6ad89a
+83	2353	8141943374910804	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a4f1f820ddc55b9a
+19	2225	8141943373628631	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	dfd7fabb3f6ad89a
 1162	1809	8122839867909588	C:/Users/Niklas/Desktop/School Werk/Year2/M5/M5-BO-TowerDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/y2k6c6h3/obj/arm64-v8a/libswappywrapper.so	1e03ccd9be28c3b9
-71	4845	8122839899107050	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	8c99f01d095a9f1a
-94	4850	8122839899061823	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	7f11de5070476387
-2	4976	8122839900587102	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ae6f45118b08b6a3
-138	4927	8122839899990058	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	995adf9935284d48
-53	5498	8122839905889083	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	2b132a2e26afdc64
-5810	5974	8122839910790287	C:/Users/Niklas/Desktop/School Werk/Year2/M5/M5-BO-TowerDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/y2k6c6h3/obj/arm64-v8a/libgame.so	bf8601f1acb78021
-53	4059	8122853641396159	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	8c99f01d095a9f1a
-133	4065	8122853641386035	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	7f11de5070476387
-72	4144	8122853642467895	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	dfd7fabb3f6ad89a
-93	4261	8122853643693507	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	995adf9935284d48
-34	4352	8122853644556561	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ae6f45118b08b6a3
-114	4572	8122853646726927	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a4f1f820ddc55b9a
-156	4899	8122853650028886	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	2b132a2e26afdc64
-14	5126	8122853652284433	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b1eaff7693a2dd08
-5126	5362	8122853654690430	C:/Users/Niklas/Desktop/School Werk/Year2/M5/M5-BO-TowerDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/y2k6c6h3/obj/arm64-v8a/libgame.so	bf8601f1acb78021
+41	2146	8141943372781808	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	8c99f01d095a9f1a
+68	2190	8141943373256525	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	7f11de5070476387
+29	2285	8141943374229828	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ae6f45118b08b6a3
+54	2203	8141943373427023	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	995adf9935284d48
+102	2550	8141943376780770	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	2b132a2e26afdc64
+2613	2796	8141943379034413	C:/Users/Niklas/Desktop/School Werk/Year2/M5/M5-BO-TowerDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/y2k6c6h3/obj/arm64-v8a/libgame.so	bf8601f1acb78021
+41	1231	8142026178772345	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	8c99f01d095a9f1a
+50	1289	8142026179409524	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	7f11de5070476387
+61	1295	8142026179486225	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	995adf9935284d48
+31	1309	8142026179623501	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	dfd7fabb3f6ad89a
+18	1372	8142026180254121	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	ae6f45118b08b6a3
+73	1418	8142026180703821	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a4f1f820ddc55b9a
+84	1568	8142026182236175	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	2b132a2e26afdc64
+6	1624	8142026182758643	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b1eaff7693a2dd08
+1624	1749	8142026184048663	C:/Users/Niklas/Desktop/School Werk/Year2/M5/M5-BO-TowerDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/y2k6c6h3/obj/arm64-v8a/libgame.so	bf8601f1acb78021

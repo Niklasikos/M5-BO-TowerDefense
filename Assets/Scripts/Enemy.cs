@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour, IEnemy
     [SerializeField] private float speed;
     [SerializeField] private int minCoins;
     [SerializeField] private int maxCoins;
-    [field: SerializeField] public int DamageToPlayer {get; set;}
+    [field: SerializeField] public int DamageToPlayer { get; set; }
     protected Transform[] positions;
     private SpriteRenderer sR;
     private int currentTarget;
@@ -23,41 +23,44 @@ public class Enemy : MonoBehaviour, IEnemy
 
     void Update()
     {
-        if(isAlive)
+        if (isAlive)
         {
-            if(positions == null)
+            if (positions == null)
             {
                 return;
             }
             transform.position = Vector2.MoveTowards(transform.position, positions[currentTarget].position, speed * Time.deltaTime);
-            if(Vector2.Distance(transform.position, positions[currentTarget].position) < 0.1f)
+            if (Vector2.Distance(transform.position, positions[currentTarget].position) < 0.1f)
             {
-                if(currentTarget < positions.Length - 1)
+                if (currentTarget < positions.Length - 1)
                 {
                     currentTarget++;
                 }
-            }        
+            }
         }
 
     }
 
     public void GetDamage(int damage)
     {
+        if (!isAlive)
+            return;
+
         health -= damage;
-        if(health <= 0)
+
+        if (health <= 0)
         {
+            isAlive = false;
             StartCoroutine(Death());
         }
         else
         {
             StartCoroutine(Hit());
         }
-
     }
 
     private IEnumerator Death()
     {
-        isAlive = false;
         int Coins = Random.Range(minCoins, maxCoins);
         LevelManager.Instance.AddCoins(Coins);
         sR.color = Color.red;
@@ -73,6 +76,7 @@ public class Enemy : MonoBehaviour, IEnemy
             sR.color = Color.Lerp(startingC, Color.clear, elapsed / duration);
             yield return null;
         }
+        WaveManager.Instance.EnemyDead();
         Destroy(gameObject);
         yield return null;
     }

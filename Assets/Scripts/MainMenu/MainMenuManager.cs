@@ -15,7 +15,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Gym"); 
+        SceneManager.LoadScene("Level 1"); 
     }
 
     public void LoadQuit()

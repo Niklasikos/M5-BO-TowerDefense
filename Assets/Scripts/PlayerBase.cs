@@ -9,6 +9,7 @@ public class PlayerBase : MonoBehaviour
             IEnemy enemy = collision.gameObject.GetComponent<IEnemy>();
             LevelManager.Instance.GetDamage(enemy.DamageToPlayer);
             Destroy(collision.gameObject);
+            WaveManager.Instance.EnemyDead();
         }
     }
 }
