@@ -4,7 +4,7 @@ using UnityEngine;
 public class GymArrow : MonoBehaviour
 {
     public GameObject target;
-    public int damage = 20;
+    private float damage;
     [SerializeField] private float speed = 10f;
     void Start()
     {
@@ -20,4 +20,15 @@ public class GymArrow : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
 
     }
+
+    public void SetDamage(float DamageAdded)
+    {
+        damage = DamageAdded;
+    }
+
+    public float GetDamage()
+    {
+        return damage;
+    }
+    
 }

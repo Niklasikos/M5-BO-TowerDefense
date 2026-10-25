@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private InputActionReference pinchFinger2;
 
     [SerializeField] private CinemachineCamera cinemachineCamera;
+    [SerializeField] private CinemachineConfiner2D confiner;
     [SerializeField] private Collider2D camBounds;
 
     [SerializeField] private float moveSpeed = 10f;
@@ -78,18 +79,20 @@ public class CameraController : MonoBehaviour
     private void ZoomHandler()
     {
         float scroll = zoomAction.action.ReadValue<float>();
-        float zoom = cinemachineCamera.Lens.OrthographicSize;
-        if (ControlAction.action.IsPressed())
-        {
-            zoomSpeed = 1f;
-        }
-        else
-        {
-            zoomSpeed = 0.5f;
-        }
-        zoom -= scroll * zoomSpeed;
 
-        cinemachineCamera.Lens.OrthographicSize = Mathf.Clamp(zoom, zoomMin, zoomMax);
+        if (scroll == 0f)
+            return;
+
+        float zoom = cinemachineCamera.Lens.OrthographicSize;
+        zoomSpeed = ControlAction.action.IsPressed() ? 1f : 0.5f;
+
+        float newZoom = Mathf.Clamp(zoom - scroll * zoomSpeed, zoomMin, zoomMax);
+
+        if (Mathf.Approximately(newZoom, zoom))
+            return;
+
+        cinemachineCamera.Lens.OrthographicSize = newZoom;
+        confiner.InvalidateLensCache();
     }
 
     private void DragHandler()
@@ -132,26 +135,42 @@ public class CameraController : MonoBehaviour
 
     private void PinchZoomHandler()
     {
-        if (Touchscreen.current == null || !Touchscreen.current.touches[0].press.isPressed ||
-            !Touchscreen.current.touches[1].press.isPressed)
+        if (Touchscreen.current == null)
         {
             wasPinching = false;
             return;
         }
 
-        Vector2 pos0 = pinchFinger1.action.ReadValue<Vector2>();
-        Vector2 pos1 = pinchFinger2.action.ReadValue<Vector2>();
+        var touches = Touchscreen.current.touches;
+
+        if (!touches[0].press.isPressed || !touches[1].press.isPressed)
+        {
+            wasPinching = false;
+            return;
+        }
+
+        Vector2 pos0 = touches[0].position.ReadValue();
+        Vector2 pos1 = touches[1].position.ReadValue();
 
         float distance = Vector2.Distance(pos0, pos1);
 
         if (wasPinching)
         {
             float difference = distance - previousPinchDistance;
+
             float zoom = cinemachineCamera.Lens.OrthographicSize;
 
-            zoom -= difference * pinchZoomSpeed;
+            float newZoom = Mathf.Clamp(
+                zoom - difference * pinchZoomSpeed,
+                zoomMin,
+                zoomMax
+            );
 
-            cinemachineCamera.Lens.OrthographicSize = Mathf.Clamp(zoom, zoomMin, zoomMax);
+            if (!Mathf.Approximately(newZoom, zoom))
+            {
+                cinemachineCamera.Lens.OrthographicSize = newZoom;
+                confiner.InvalidateLensCache();
+            }
         }
 
         previousPinchDistance = distance;

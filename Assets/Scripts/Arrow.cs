@@ -3,7 +3,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public GameObject target;
-    public int damage;
+    private int damage;
     [SerializeField] private float speed = 10f;
     void Start()
     {
@@ -33,5 +33,10 @@ public class Arrow : MonoBehaviour
             enemy.GetDamage(damage);
             Destroy(gameObject);
         }
+    }
+
+    public void SetDamage(int DamageAdded)
+    {
+        damage = DamageAdded;
     }
 }

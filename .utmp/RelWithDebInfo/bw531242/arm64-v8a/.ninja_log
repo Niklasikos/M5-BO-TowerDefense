@@ -1,0 +1,19 @@
+# ninja log v5
+40	2259	8143861027868164	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	6c582eccaac9fc27
+50	2273	8143861027934033	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	14e627e8c070483b
+2784	2988	8143861035177538	C:/Users/Niklas/Desktop/School Werk/Year2/M5/M5TowerDefense/M5-BO-TowerDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/bw531242/obj/arm64-v8a/libgame.so	e920379370e1bba
+71	2594	8143861031275936	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f831d9b4335fb04a
+10	2313	8143861028423705	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	23355a0cf479dffb
+19	2407	8143861029389593	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	34759e1654292ac
+60	2330	8143861028610649	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	cc4e368098590033
+29	2648	8143861031778011	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e483819fdb5f206f
+1	2784	8143861033151657	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e2c785fc63538f43
+48	1877	8143864206986550	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	6c582eccaac9fc27
+17	1891	8143864207107719	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	14e627e8c070483b
+37	1947	8143864207662364	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	23355a0cf479dffb
+84	1978	8143864207984511	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	cc4e368098590033
+29	1987	8143864208064892	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	34759e1654292ac
+71	2151	8143864209681936	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	f831d9b4335fb04a
+60	2348	8143864211629509	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e483819fdb5f206f
+7	2473	8143864212891595	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	e2c785fc63538f43
+2474	2615	8143864214323491	C:/Users/Niklas/Desktop/School Werk/Year2/M5/M5TowerDefense/M5-BO-TowerDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/bw531242/obj/arm64-v8a/libgame.so	e920379370e1bba

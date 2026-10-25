@@ -82,7 +82,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -6
+  m_SortingOrder: -5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 8847bf50bfa7c2244a4e5bddcd63becc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41e4e62dd7937042b719b76eae147f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickTest
-  triangle: {fileID: 1205934463745076837}
+  Popup: {fileID: 1205934463745076837}
 --- !u!1001 &6426039577268322492
 PrefabInstance:
   m_ObjectHideFlags: 0

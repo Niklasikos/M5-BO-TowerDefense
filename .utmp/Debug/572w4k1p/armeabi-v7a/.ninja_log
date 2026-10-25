@@ -1,0 +1,19 @@
+# ninja log v5
+15	1083	8145247581829475	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	dc3cf1eb6a66fca6
+75	1243	8145247583482069	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7c850653a361e863
+35	1149	8145247582522988	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	84a7fd5edfa6bbd4
+55	1147	8145247582507807	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	e833621677dce142
+25	1125	8145247582282176	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5c03d7f8218a9c35
+44	1192	8145247582960134	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	a39de430e04eb86f
+65	1266	8145247583699013	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e3a9c76b9a5959c1
+5	1288	8145247583879380	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f5f0da6d5f43fc45
+1288	1402	8145247585068142	C:/Users/Niklas/Desktop/School Werk/Year2/M5/M5TowerDefense/M5-BO-TowerDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/572w4k1p/obj/armeabi-v7a/libgame.so	a5924b0f9931c800
+24	1122	8145252461585950	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	84a7fd5edfa6bbd4
+16	1163	8145252462037614	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	dc3cf1eb6a66fca6
+53	1165	8145252462077261	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	e833621677dce142
+34	1182	8145252462254407	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	5c03d7f8218a9c35
+63	1199	8145252462452704	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	a39de430e04eb86f
+44	1269	8145252463110150	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e3a9c76b9a5959c1
+73	1279	8145252463236358	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7c850653a361e863
+6	1290	8145252463298713	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	f5f0da6d5f43fc45
+1291	1404	8145252464467526	C:/Users/Niklas/Desktop/School Werk/Year2/M5/M5TowerDefense/M5-BO-TowerDefense/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/572w4k1p/obj/armeabi-v7a/libgame.so	a5924b0f9931c800

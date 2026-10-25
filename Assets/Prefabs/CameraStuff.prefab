@@ -222,11 +222,12 @@ MonoBehaviour:
   pinchFinger1: {fileID: -9019172234471591473, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   pinchFinger2: {fileID: 3013188653167507826, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   cinemachineCamera: {fileID: 3220995317031323112}
+  confiner: {fileID: 4833748187874723794}
   camBounds: {fileID: 7679120438710298515}
   moveSpeed: 5
   zoomSpeed: 0.5
   zoomMin: 4
-  zoomMax: 8
+  zoomMax: 12
   pinchZoomSpeed: 0.01
 --- !u!1 &2268686017711790729
 GameObject:

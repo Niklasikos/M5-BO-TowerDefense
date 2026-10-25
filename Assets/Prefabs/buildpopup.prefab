@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 579073298210431469}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.862, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0.862, y: 0.8, z: 0}
   m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -126,7 +126,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.38, y: 1.29}
+  m_AnchoredPosition: {x: -1.38, y: 1.5}
   m_SizeDelta: {x: 20, y: 16.2905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &8463264768646110557
@@ -307,7 +307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.38, y: 1.29}
+  m_AnchoredPosition: {x: 1.38, y: 1.5}
   m_SizeDelta: {x: 20, y: 16.2905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &5584693636258832176
@@ -481,7 +481,7 @@ Transform:
   m_GameObject: {fileID: 2996622145040298067}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.6, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0.8, z: 0}
   m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -573,7 +573,7 @@ Transform:
   m_GameObject: {fileID: 4759939142297312154}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8586, y: 0.6, z: 0}
+  m_LocalPosition: {x: -1.8586, y: 0.8, z: 0}
   m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -724,14 +724,14 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -5
+  m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2142144814104882750, guid: a06980030f191c2459fe8867196dd2e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a06980030f191c2459fe8867196dd2e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.18, y: 4.61}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuilderPopup
   TowerPos: {fileID: 0}
-  ArcherTower: {fileID: 5223518658142220302, guid: 761a53cc8e2022749b092dc21458f65a, type: 3}
+  ArcherTower: {fileID: 5082296256805842383, guid: 79c2c7b7b5cc53a4a8ebb2f4483b2685, type: 3}
   MageTower: {fileID: 0}
   CanonTower: {fileID: 0}
   ArchText: {fileID: 8468937852254242281}
@@ -792,7 +792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.29}
+  m_AnchoredPosition: {x: 0, y: 1.5}
   m_SizeDelta: {x: 20, y: 16.2905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6867556904855177527
