@@ -750,7 +750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuilderPopup
   TowerPos: {fileID: 0}
   ArcherTower: {fileID: 5082296256805842383, guid: 79c2c7b7b5cc53a4a8ebb2f4483b2685, type: 3}
-  MageTower: {fileID: 0}
+  MageTower: {fileID: 8335207405503222353, guid: 14a1fa58fa246c245b8be6a5630377e0, type: 3}
   CanonTower: {fileID: 0}
   ArchText: {fileID: 8468937852254242281}
   MageText: {fileID: 956877388098818278}

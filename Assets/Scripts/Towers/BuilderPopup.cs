@@ -38,12 +38,12 @@ public class BuilderPopup : MonoBehaviour
                 break;
             case TowerType.Mage:
                 Debug.Log("Mage");
-                // if(LevelManager.Instance.CoinsCurrently() >= MagePrice)
-                // {
-                //     Instantiate(MageTower, TowerPos.transform.position, quaternion.identity);
-                //     LevelManager.Instance.RemoveCoins(MagePrice);
-                //     Destroy(TowerPos);
-                // }
+                if(LevelManager.Instance.CoinsCurrently() >= MagePrice)
+                {
+                    Destroy(TowerPos);
+                    Instantiate(MageTower, TowerPos.transform.position, quaternion.identity);
+                    LevelManager.Instance.RemoveCoins(MagePrice);
+                }
                 break;
             case TowerType.Canon:
                 Debug.Log("Canon");

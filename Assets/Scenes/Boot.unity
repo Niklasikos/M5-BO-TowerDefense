@@ -149,6 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainGameManager
   stats: 00000000000000000000000000000000
+  SaveFileName1: Saves.data
+  SaveFileName2: Stats.data
 --- !u!4 &322292245
 Transform:
   m_ObjectHideFlags: 0

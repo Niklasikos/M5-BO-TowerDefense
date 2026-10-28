@@ -21,7 +21,7 @@ public class MageTower : Tower
     [SerializeField] private float radiusAdded3 = 1f;
     [SerializeField] private float shootingTimerReduced3 = 0.25f;
     [Space]
-    [SerializeField] private GameObject gymArrow;
+    [SerializeField] private GameObject Attack;
 
 
     private float elapsed;
@@ -40,9 +40,11 @@ public class MageTower : Tower
 
         if (elapsed > shootingTimer)
         {
-            GameObject arrow = Instantiate(gymArrow, transform.position, Quaternion.identity);
-            arrow.GetComponent<Arrow>().target = targets.FirstOrDefault(target => target != null);
-            arrow.GetComponent<Arrow>().SetDamage(damage);
+            GameObject arrow = Instantiate(Attack, transform.position, Quaternion.identity);
+            arrow.GetComponent<Projectile>().projectileOptions = ProjectileOptions.MageOrb;
+            arrow.GetComponent<Projectile>().target = targets.FirstOrDefault(target => target != null);
+            arrow.GetComponent<Projectile>().SetDamage(damage);
+            arrow.GetComponent<Projectile>().SetEffect(5); // change to variable later on
             elapsed = 0f;
         }
     }

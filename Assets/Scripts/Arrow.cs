@@ -1,10 +1,18 @@
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public enum ProjectileOptions
 {
+    Arrow,
+    MageOrb,
+    CanonBall
+}
+public class Projectile : MonoBehaviour
+{
+    public ProjectileOptions projectileOptions;
     public GameObject target;
     private int damage;
     [SerializeField] private float speed = 10f;
+    private float EffectLenght;
     void Start()
     {
 
@@ -12,7 +20,7 @@ public class Arrow : MonoBehaviour
 
     void Update()
     {
-        if(target == null)
+        if (target == null)
         {
             Destroy(gameObject);
             return;
@@ -27,16 +35,39 @@ public class Arrow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Enemy") && collision.gameObject == target)
+        if (collision.gameObject.CompareTag("Enemy") && collision.gameObject == target)
         {
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.GetDamage(damage);
-            Destroy(gameObject);
+            switch (projectileOptions)
+            {
+                case ProjectileOptions.Arrow:
+                    Enemy enemy1 = collision.gameObject.GetComponent<Enemy>();
+                    enemy1.GetDamage(damage);
+                    Destroy(gameObject);
+                    break;
+
+                case ProjectileOptions.MageOrb:
+                    Enemy enemy2 = collision.gameObject.GetComponent<Enemy>();
+                    enemy2.GetDamage(damage);
+                    enemy2.GetEffect(EffectLenght);
+                    Destroy(gameObject);
+                    break;
+            }
+
         }
     }
 
-    public void SetDamage(int DamageAdded)
+    public void SetDamage(int DamageSet)
     {
-        damage = DamageAdded;
+        damage = DamageSet;
+    }
+
+    public void SetSpeed(float speedSet)
+    {
+        speed = speedSet;
+    }
+
+    public void SetEffect(float EffectSet)
+    {
+        EffectLenght = EffectSet;
     }
 }
