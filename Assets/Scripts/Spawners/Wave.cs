@@ -1,5 +1,12 @@
+using UnityEngine;
+
 [System.Serializable]
 public class Wave
 {
-    public SpawnGroup[] spawnGroup;
+    [SerializeField] private SpawnGroup[] spawnGroup;
+
+    public SpawnGroup[] GetSpawnGroups()
+    {
+        return spawnGroup;
+    }
 }

@@ -41,8 +41,8 @@ public class ArcherTower : Tower
         if (elapsed > shootingTimer)
         {
             GameObject arrow = Instantiate(Attack, transform.position, Quaternion.identity);
-            arrow.GetComponent<Projectile>().projectileOptions = ProjectileOptions.Arrow;
-            arrow.GetComponent<Projectile>().target = targets.FirstOrDefault(target => target != null);
+            arrow.GetComponent<Projectile>().SetProjectileOptions(ProjectileOptions.Arrow);
+            arrow.GetComponent<Projectile>().SetTarget(targets.FirstOrDefault(target => target != null));
             arrow.GetComponent<Projectile>().SetDamage(damage);
             elapsed = 0f;
         }

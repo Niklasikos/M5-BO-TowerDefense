@@ -1,8 +1,30 @@
+using UnityEngine;
+
 [System.Serializable]
 public class SpawnGroup
 {
-    public int spawnerID;
-    public int enemyType;
-    public int enemyCount;
-    public float spawnEnemyInterval = 1f;
+    [SerializeField] private int spawnerID;
+    [SerializeField] private int enemyType;
+    [SerializeField] private int enemyCount;
+    [SerializeField] private float spawnEnemyInterval = 1f;
+
+    public int GetSpawnerID()
+    {
+        return spawnerID;
+    }
+
+    public int GetEnemyType()
+    {
+        return enemyType;
+    }
+
+    public int GetEnemyCount()
+    {
+        return enemyCount;
+    }
+
+    public float GetSpawnEnemyInterval()
+    {
+        return spawnEnemyInterval;
+    }
 }

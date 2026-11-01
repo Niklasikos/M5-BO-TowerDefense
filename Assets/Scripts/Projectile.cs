@@ -8,8 +8,8 @@ public enum ProjectileOptions
 }
 public class Projectile : MonoBehaviour
 {
-    public ProjectileOptions projectileOptions;
-    public GameObject target;
+    private ProjectileOptions projectileOptions;
+    private GameObject target;
     private int damage;
     [SerializeField] private float speed = 10f;
     private float EffectLenght;
@@ -69,5 +69,15 @@ public class Projectile : MonoBehaviour
     public void SetEffect(float EffectSet)
     {
         EffectLenght = EffectSet;
+    }
+
+    public void SetProjectileOptions(ProjectileOptions options)
+    {
+        projectileOptions = options;
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        this.target = target;
     }
 }

@@ -8,14 +8,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int minCoins;
     [SerializeField] private int maxCoins;
     [SerializeField] private GameObject EffectGO;
-    [SerializeField] public int damageToPlayer;
+    [SerializeField] private int damageToPlayer;
     private Transform[] positions;
     private SpriteRenderer sR;
     private SpriteRenderer EffectSR;
     private int currentTarget;
     private float speedBeforeEffect;
     private Coroutine effectCoroutine;
-    public bool isAlive = true;
+    private bool isAlive = true;
     public void Init(Transform[] points)
     {
         positions = points;
@@ -114,5 +114,15 @@ public class Enemy : MonoBehaviour
         sR.color = Color.red;
         yield return new WaitForSeconds(0.2f);
         sR.color = Color.white;
+    }
+
+    public bool GetAlive()
+    {
+        return isAlive;
+    }
+
+    public int GetDamageToPlayer()
+    {
+        return damageToPlayer;
     }
 }

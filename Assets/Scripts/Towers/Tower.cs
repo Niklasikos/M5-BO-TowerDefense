@@ -19,7 +19,7 @@ public class Tower : MonoBehaviour
         targets.RemoveAll(target =>
         {
             Enemy enemy = target.GetComponent<Enemy>();
-            return enemy == null || !enemy.isAlive;
+            return enemy == null || !enemy.GetAlive();
         });        
     }
     protected void OnTriggerEnter2D(Collider2D collision)

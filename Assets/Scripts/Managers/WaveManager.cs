@@ -5,7 +5,7 @@ using System.Collections;
 
 public class WaveManager : MonoBehaviour
 {
-    public static WaveManager Instance;
+    public static WaveManager Instance { get; private set;}
     public static event Action<int, Wave> OnWaveStart;
     private int enemyCount = 0;
     private int spawnerActive = 0;
