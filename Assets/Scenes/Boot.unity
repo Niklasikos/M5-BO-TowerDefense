@@ -148,9 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326cc4619e13dcd47b1448aa196c16a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainGameManager
-  stats: 00000000000000000000000000000000
-  SaveFileName1: Saves.data
-  SaveFileName2: Stats.data
+  SaveFileName1: saves.data
+  SaveFileName2: stats.data
 --- !u!4 &322292245
 Transform:
   m_ObjectHideFlags: 0

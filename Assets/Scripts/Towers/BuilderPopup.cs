@@ -47,12 +47,12 @@ public class BuilderPopup : MonoBehaviour
                 break;
             case TowerType.Canon:
                 Debug.Log("Canon");
-                // if(LevelManager.Instance.CoinsCurrently() >= CanonPrice)
-                // {
-                //     Instantiate(CanonTower, TowerPos.transform.position, quaternion.identity);
-                //     LevelManager.Instance.RemoveCoins(CanonPrice);
-                //     Destroy(TowerPos);
-                // }
+                if(LevelManager.Instance.CoinsCurrently() >= CanonPrice)
+                {
+                    Destroy(TowerPos);                    
+                    Instantiate(CanonTower, TowerPos.transform.position, quaternion.identity);
+                    LevelManager.Instance.RemoveCoins(CanonPrice);
+                }
                 break;
             default:
                 Debug.Log("whopsie pupsie");

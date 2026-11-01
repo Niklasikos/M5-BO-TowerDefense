@@ -10,7 +10,7 @@ public class Banner : MonoBehaviour, IInteractible
     void Start()
     {
         image = GetComponent<Image>();
-        image.sprite = true ? BannerSpriteBlue : BannerSpriteRed;
+        image.sprite = MainGameManager.Instance.GetBool(Level) ? BannerSpriteBlue : BannerSpriteRed;
     }
 
     void Update()

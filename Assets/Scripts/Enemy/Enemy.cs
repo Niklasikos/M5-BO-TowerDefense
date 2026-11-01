@@ -1,15 +1,14 @@
 using UnityEngine;
 using System.Collections;
-using System.Security.Cryptography;
 
-public class Enemy : MonoBehaviour, IEnemy
+public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int health;
-    [SerializeField] private float speed;
+    protected int health;
+    protected float speed;
     [SerializeField] private int minCoins;
     [SerializeField] private int maxCoins;
     [SerializeField] private GameObject EffectGO;
-    [field: SerializeField] public int DamageToPlayer { get; set; }
+    [SerializeField] public int damageToPlayer;
     private Transform[] positions;
     private SpriteRenderer sR;
     private SpriteRenderer EffectSR;
@@ -21,7 +20,7 @@ public class Enemy : MonoBehaviour, IEnemy
     {
         positions = points;
     }
-    void Start()
+    protected virtual void Start()
     {
         EffectGO.SetActive(false);
         sR = GetComponent<SpriteRenderer>();
@@ -30,19 +29,15 @@ public class Enemy : MonoBehaviour, IEnemy
 
     void Update()
     {
-        if (isAlive)
+        if (!isAlive || positions == null)
+            return;
+
+        transform.position = Vector2.MoveTowards(transform.position, positions[currentTarget].position, speed * Time.deltaTime);
+        if (Vector2.Distance(transform.position, positions[currentTarget].position) < 0.1f)
         {
-            if (positions == null)
+            if (currentTarget < positions.Length - 1)
             {
-                return;
-            }
-            transform.position = Vector2.MoveTowards(transform.position, positions[currentTarget].position, speed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, positions[currentTarget].position) < 0.1f)
-            {
-                if (currentTarget < positions.Length - 1)
-                {
-                    currentTarget++;
-                }
+                currentTarget++;
             }
         }
 

@@ -6,8 +6,8 @@ public class PlayerBase : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            IEnemy enemy = collision.gameObject.GetComponent<IEnemy>();
-            LevelManager.Instance.GetDamage(enemy.DamageToPlayer);
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            LevelManager.Instance.GetDamage(enemy.damageToPlayer);
             Destroy(collision.gameObject);
             WaveManager.Instance.EnemyDead();
         }

@@ -35,11 +35,25 @@ public class Spawner : MonoBehaviour
                 break;
 
             case 2:
-
+                for (int i = 0; i < EnemySpawnCount; i++)
+                {
+                    yield return new WaitForSeconds(interval);
+                    GameObject spawn = Instantiate(enemy2, transform.position, Quaternion.identity);
+                    Enemy enemy = spawn.GetComponent<Enemy>();
+                    WaveManager.Instance.EnemySpawned();
+                    enemy.Init(pathpoints);
+                }
                 break;
 
             case 3:
-
+                for (int i = 0; i < EnemySpawnCount; i++)
+                {
+                    yield return new WaitForSeconds(interval);
+                    GameObject spawn = Instantiate(enemy3, transform.position, Quaternion.identity);
+                    Enemy enemy = spawn.GetComponent<Enemy>();
+                    WaveManager.Instance.EnemySpawned();
+                    enemy.Init(pathpoints);
+                }
                 break;
         }
     }

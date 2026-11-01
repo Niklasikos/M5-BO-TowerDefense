@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d2498f04bb82b4e8ecf68c89d6bce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  SpawnerID: 0
   pathpoints: []
-  enemy01: {fileID: 7115270614706695891, guid: d167ef02ba5ce5149b83fe62d3347cf2, type: 3}
+  enemy1: {fileID: 9115712293167670553, guid: 9b1fd7f88231c4948a32f46f815a1efe, type: 3}
+  enemy2: {fileID: 5845822004772580889, guid: 57f5ef387d2bf8848ad9eb0449d049a1, type: 3}
+  enemy3: {fileID: 6854246415950719763, guid: 08257bb594155b449b8404d25052b875, type: 3}

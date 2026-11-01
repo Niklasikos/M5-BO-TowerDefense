@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a36f654a104c0408ccb6976b922347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Arrow
+  projectileOptions: 1
   target: {fileID: 0}
   speed: 10
 --- !u!70 &3000683968281985814

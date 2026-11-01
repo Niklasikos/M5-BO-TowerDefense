@@ -120,6 +120,27 @@ public class ClickPopup : MonoBehaviour, IInteractible
                     }
                 }
                 break;
+            case TowerType.Canon:
+                if (MaxUpgradeReached || level >= MaxLevel)
+                    break;
+
+                if (LevelManager.Instance.CoinsCurrently() >= pricesUpgrades[level])
+                {
+                    LevelManager.Instance.RemoveCoins(pricesUpgrades[level]);
+                    level++;
+                    GetComponentInParent<CanonTower>().LevelStats(level);
+                    LevelText.text = $"{level}";
+                    if (level >= MaxLevel)
+                    {
+                        MaxUpgradeReached = true;
+                        UpgradeText.text = "Max";
+                    }
+                    else
+                    {
+                        UpgradeText.text = $"{pricesUpgrades[level]}$";
+                    }
+                }
+                break;
         }
     }
 

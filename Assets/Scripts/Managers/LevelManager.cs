@@ -7,7 +7,10 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance;
+    [SerializeField] private int level;
+    private float[] gameSpeed = {0.5f, 1f, 2f};
+    private int currentSpeed = 1;
+    public static LevelManager Instance {get; private set;}
     [SerializeField] private GameObject WinUI;
     [SerializeField] private GameObject DeathUI;
     [SerializeField] private Image Heart;
@@ -24,6 +27,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int Coins;
     [SerializeField] private int health;
     [SerializeField] private bool isAlive = true;
+    [SerializeField] private GameObject transitionerGO;
+    [SerializeField] private Image transitioner;
+    [SerializeField] private TextMeshProUGUI SpeedText;
     private bool isPaused = false;
 
     [SerializeField] InputActionReference EscapeAction;
@@ -52,6 +58,12 @@ public class LevelManager : MonoBehaviour
         Coins += 50;
         UpdateCoinsDisplay();
         UpdateHealthDisplay();
+    }
+
+    void Start()
+    {
+        transitioner.CrossFadeAlpha(0f, 1f, false);
+        Invoke(nameof(SetInActive), 1f);
     }
 
     void Update()
@@ -83,6 +95,17 @@ public class LevelManager : MonoBehaviour
     public int CoinsCurrently()
     {
         return Coins;
+    }
+
+    public void ChangeSpeed()
+    {
+        currentSpeed++;
+        if(currentSpeed >= gameSpeed.Length)
+        {
+            currentSpeed = 0;
+        }
+        Time.timeScale = gameSpeed[currentSpeed];
+        SpeedText.text = $"{gameSpeed[currentSpeed]}x";
     }
 
     public void GetDamage(int damage)
@@ -142,7 +165,7 @@ public class LevelManager : MonoBehaviour
         if (isPaused)
         {
             isPaused = false;
-            Time.timeScale = 1f;
+            Time.timeScale = gameSpeed[currentSpeed];
             PausePanel.SetActive(false);
             PauseButton.SetActive(true);
             inputMap.Enable();
@@ -165,10 +188,28 @@ public class LevelManager : MonoBehaviour
 
     public void LevelSelect()
     {
-        SceneManager.LoadScene("Level Select");
+        Time.timeScale = 1f;
+        OnDisable();
+        SetActive();
+        transitioner.CrossFadeAlpha(1f, 1f, false);
+        Invoke(nameof(LoadLevelSelect), 1f);
+    }
+
+    private void LoadLevelSelect()
+    {
+        SceneManager.LoadScene("Level Select");        
     }
 
     public void MainMenu()
+    {
+        Time.timeScale = 1f;
+        OnDisable();
+        SetActive();
+        transitioner.CrossFadeAlpha(1f, 1f, false);
+        Invoke(nameof(LoadMainMenu), 1f);
+    }
+
+    private void LoadMainMenu()
     {
         SceneManager.LoadScene("Main Menu");
     }
@@ -178,5 +219,16 @@ public class LevelManager : MonoBehaviour
         OnDisable();
         Time.timeScale = 0f;
         WinUI.SetActive(true);
+        MainGameManager.Instance.SetBool(level);
+    }
+
+    private void SetInActive()
+    {
+        transitionerGO.SetActive(false);
+    }
+
+    private void SetActive()
+    {
+        transitionerGO.SetActive(true);
     }
 }
