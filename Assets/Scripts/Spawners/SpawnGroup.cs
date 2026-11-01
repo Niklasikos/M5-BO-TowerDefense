@@ -8,23 +8,8 @@ public class SpawnGroup
     [SerializeField] private int enemyCount;
     [SerializeField] private float spawnEnemyInterval = 1f;
 
-    public int GetSpawnerID()
-    {
-        return spawnerID;
-    }
-
-    public int GetEnemyType()
-    {
-        return enemyType;
-    }
-
-    public int GetEnemyCount()
-    {
-        return enemyCount;
-    }
-
-    public float GetSpawnEnemyInterval()
-    {
-        return spawnEnemyInterval;
-    }
+    public int SpawnerID {get {return spawnerID;}}
+    public int EnemyType {get {return enemyType;}}
+    public int EnemyCount {get {return enemyCount;}}
+    public float SpawnEnemyInterval {get {return spawnEnemyInterval;}}
 }

@@ -12,7 +12,13 @@ public class Projectile : MonoBehaviour
     private GameObject target;
     private int damage;
     [SerializeField] private float speed = 10f;
-    private float EffectLenght;
+    private float effectLenght;
+
+    public int Damage {set {damage = value;}}
+    public float Speed {set {speed = value;}}
+    public float EffectLenght {set {effectLenght = value;}}
+    public ProjectileOptions ProjectileType {set {projectileOptions = value;}}
+    public GameObject Target {set {target = value;}}
     void Start()
     {
 
@@ -48,36 +54,16 @@ public class Projectile : MonoBehaviour
                 case ProjectileOptions.MageOrb:
                     Enemy enemy2 = collision.gameObject.GetComponent<Enemy>();
                     enemy2.GetDamage(damage);
-                    enemy2.GetEffect(EffectLenght);
+                    enemy2.GetEffect(effectLenght);
+                    Destroy(gameObject);
+                    break;
+                case ProjectileOptions.CanonBall:
+                    Enemy enemy3 = collision.gameObject.GetComponent<Enemy>();
+                    enemy3.GetDamage(damage);
                     Destroy(gameObject);
                     break;
             }
 
         }
-    }
-
-    public void SetDamage(int DamageSet)
-    {
-        damage = DamageSet;
-    }
-
-    public void SetSpeed(float speedSet)
-    {
-        speed = speedSet;
-    }
-
-    public void SetEffect(float EffectSet)
-    {
-        EffectLenght = EffectSet;
-    }
-
-    public void SetProjectileOptions(ProjectileOptions options)
-    {
-        projectileOptions = options;
-    }
-
-    public void SetTarget(GameObject target)
-    {
-        this.target = target;
     }
 }

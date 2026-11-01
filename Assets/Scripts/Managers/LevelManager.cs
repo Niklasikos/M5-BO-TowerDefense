@@ -25,8 +25,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject PausePanel;
     [SerializeField] private GameObject PauseButton;
     [SerializeField] private int Coins;
+    public int CoinsCurrently {get {return Coins;}}
     [SerializeField] private int health;
     [SerializeField] private bool isAlive = true;
+    public bool IsAlive {get {return isAlive;}}
     [SerializeField] private GameObject transitionerGO;
     [SerializeField] private Image transitioner;
     [SerializeField] private TextMeshProUGUI SpeedText;
@@ -92,11 +94,6 @@ public class LevelManager : MonoBehaviour
         coinsCount.text = $"Coins: {Coins}";
     }
 
-    public int CoinsCurrently()
-    {
-        return Coins;
-    }
-
     public void ChangeSpeed()
     {
         currentSpeed++;
@@ -122,11 +119,6 @@ public class LevelManager : MonoBehaviour
             isAlive = false;
             Death();
         }
-    }
-
-    public bool GetAlive()
-    {
-        return isAlive;
     }
 
     private void UpdateHealthDisplay()

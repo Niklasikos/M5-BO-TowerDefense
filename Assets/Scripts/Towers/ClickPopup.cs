@@ -35,7 +35,7 @@ public class ClickPopup : MonoBehaviour, IInteractible
         SellText.text = $"+{coinsGettingBackPossible * 80 / 100}$";
         if (!MaxUpgradeReached)
         {
-            UpgradeText.color = LevelManager.Instance.CoinsCurrently() >= pricesUpgrades[level] ? Color.green : Color.red;
+            UpgradeText.color = LevelManager.Instance.CoinsCurrently >= pricesUpgrades[level] ? Color.green : Color.red;
         }
         else
         {
@@ -81,7 +81,7 @@ public class ClickPopup : MonoBehaviour, IInteractible
                 if (MaxUpgradeReached || level >= MaxLevel)
                     break;
 
-                if (LevelManager.Instance.CoinsCurrently() >= pricesUpgrades[level])
+                if (LevelManager.Instance.CoinsCurrently >= pricesUpgrades[level])
                 {
                     LevelManager.Instance.RemoveCoins(pricesUpgrades[level]);
                     level++;
@@ -103,7 +103,7 @@ public class ClickPopup : MonoBehaviour, IInteractible
                 if (MaxUpgradeReached || level >= MaxLevel)
                     break;
 
-                if (LevelManager.Instance.CoinsCurrently() >= pricesUpgrades[level])
+                if (LevelManager.Instance.CoinsCurrently >= pricesUpgrades[level])
                 {
                     LevelManager.Instance.RemoveCoins(pricesUpgrades[level]);
                     level++;
@@ -124,7 +124,7 @@ public class ClickPopup : MonoBehaviour, IInteractible
                 if (MaxUpgradeReached || level >= MaxLevel)
                     break;
 
-                if (LevelManager.Instance.CoinsCurrently() >= pricesUpgrades[level])
+                if (LevelManager.Instance.CoinsCurrently >= pricesUpgrades[level])
                 {
                     LevelManager.Instance.RemoveCoins(pricesUpgrades[level]);
                     level++;

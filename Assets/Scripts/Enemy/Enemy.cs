@@ -16,6 +16,8 @@ public class Enemy : MonoBehaviour
     private float speedBeforeEffect;
     private Coroutine effectCoroutine;
     private bool isAlive = true;
+    public bool IsAlive {get {return isAlive;}}
+    public int DamageToPlayer {get {return damageToPlayer;}}
     public void Init(Transform[] points)
     {
         positions = points;
@@ -116,13 +118,5 @@ public class Enemy : MonoBehaviour
         sR.color = Color.white;
     }
 
-    public bool GetAlive()
-    {
-        return isAlive;
-    }
 
-    public int GetDamageToPlayer()
-    {
-        return damageToPlayer;
-    }
 }

@@ -44,9 +44,9 @@ public class CanonTower : Tower
         {
             animator.SetTrigger("Shoot");
             GameObject arrow = Instantiate(Attack, new Vector2(transform.position.x, transform.position.y + 0.6f), Quaternion.identity);
-            arrow.GetComponent<Projectile>().SetProjectileOptions(ProjectileOptions.MageOrb);
-            arrow.GetComponent<Projectile>().SetTarget(targets.FirstOrDefault(target => target != null));
-            arrow.GetComponent<Projectile>().SetDamage(damage);
+            arrow.GetComponent<Projectile>().ProjectileType = ProjectileOptions.Arrow;
+            arrow.GetComponent<Projectile>().Target = targets.FirstOrDefault(target => target != null);
+            arrow.GetComponent<Projectile>().Damage = damage;
             elapsed = 0f;
         }
     }

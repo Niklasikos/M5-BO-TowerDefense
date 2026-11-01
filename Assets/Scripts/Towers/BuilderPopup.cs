@@ -19,9 +19,9 @@ public class BuilderPopup : MonoBehaviour
 
     void Update()
     {
-        ArchText.color = LevelManager.Instance.CoinsCurrently() >= ArcherPrice ? Color.green : Color.red;
-        MageText.color = LevelManager.Instance.CoinsCurrently() >= MagePrice ? Color.green : Color.red;
-        CanonText.color = LevelManager.Instance.CoinsCurrently() >= CanonPrice ? Color.green : Color.red;
+        ArchText.color = LevelManager.Instance.CoinsCurrently >= ArcherPrice ? Color.green : Color.red;
+        MageText.color = LevelManager.Instance.CoinsCurrently >= MagePrice ? Color.green : Color.red;
+        CanonText.color = LevelManager.Instance.CoinsCurrently >= CanonPrice ? Color.green : Color.red;
     }
 
     public void ButtonClicked(TowerType towerType)
@@ -29,7 +29,7 @@ public class BuilderPopup : MonoBehaviour
         switch(towerType)
         {
             case TowerType.Archer:
-                if(LevelManager.Instance.CoinsCurrently() >= ArcherPrice)
+                if(LevelManager.Instance.CoinsCurrently >= ArcherPrice)
                 {
                     Destroy(TowerPos);                 
                     Instantiate(ArcherTower, TowerPos.transform.position, quaternion.identity);
@@ -38,7 +38,7 @@ public class BuilderPopup : MonoBehaviour
                 break;
             case TowerType.Mage:
                 Debug.Log("Mage");
-                if(LevelManager.Instance.CoinsCurrently() >= MagePrice)
+                if(LevelManager.Instance.CoinsCurrently >= MagePrice)
                 {
                     Destroy(TowerPos);
                     Instantiate(MageTower, TowerPos.transform.position, quaternion.identity);
@@ -47,7 +47,7 @@ public class BuilderPopup : MonoBehaviour
                 break;
             case TowerType.Canon:
                 Debug.Log("Canon");
-                if(LevelManager.Instance.CoinsCurrently() >= CanonPrice)
+                if(LevelManager.Instance.CoinsCurrently >= CanonPrice)
                 {
                     Destroy(TowerPos);                    
                     Instantiate(CanonTower, TowerPos.transform.position, quaternion.identity);

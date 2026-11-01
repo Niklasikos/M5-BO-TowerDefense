@@ -66,13 +66,13 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator SpawnWave(Wave currentWave)
     {
-        foreach (SpawnGroup group in currentWave.GetSpawnGroups())
+        foreach (SpawnGroup group in currentWave.SpawnGroup)
         {
-            if (group.GetSpawnerID() != SpawnerID)
+            if (group.SpawnerID != SpawnerID)
                 continue;
 
             yield return StartCoroutine(
-                SpawnEnemy(group.GetEnemyCount(), group.GetEnemyType(), group.GetSpawnEnemyInterval())
+                SpawnEnemy(group.EnemyCount, group.EnemyCount, group.SpawnEnemyInterval)
             );
 
         }

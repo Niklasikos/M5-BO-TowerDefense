@@ -53,7 +53,7 @@ public class WaveManager : MonoBehaviour
             return;
 
         Debug.Log($"Enemies: {enemyCount} | Active Spawners: {spawnerActive} | Waves: {WaveCounter}/{MaxWaves}");
-        if (enemyCount == 0 && spawnerActive == 0 && WaveCounter >= MaxWaves && LevelManager.Instance.GetAlive())
+        if (enemyCount == 0 && spawnerActive == 0 && WaveCounter >= MaxWaves && LevelManager.Instance.IsAlive)
         {
             Won = true;
             Debug.Log("Player Won");
