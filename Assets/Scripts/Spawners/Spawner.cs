@@ -72,7 +72,7 @@ public class Spawner : MonoBehaviour
                 continue;
 
             yield return StartCoroutine(
-                SpawnEnemy(group.EnemyCount, group.EnemyCount, group.SpawnEnemyInterval)
+                SpawnEnemy(group.EnemyCount, group.EnemyType, group.SpawnEnemyInterval)
             );
 
         }

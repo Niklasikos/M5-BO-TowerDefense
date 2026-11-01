@@ -41,7 +41,7 @@ public class MageTower : Tower
         if (elapsed > shootingTimer)
         {
             GameObject arrow = Instantiate(Attack, transform.position, Quaternion.identity);
-            arrow.GetComponent<Projectile>().ProjectileType = ProjectileOptions.Arrow;
+            arrow.GetComponent<Projectile>().ProjectileType = ProjectileOptions.MageOrb;
             arrow.GetComponent<Projectile>().Target = targets.FirstOrDefault(target => target != null);
             arrow.GetComponent<Projectile>().Damage = damage;
             arrow.GetComponent<Projectile>().EffectLenght = 5; // change to variable later on
